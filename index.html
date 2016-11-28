@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title></title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+   
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.25.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.25.1/mapbox-gl.css' rel='stylesheet' />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<link rel="stylesheet" href="app/css/style.css"/>	
+	<script src='app/js/app.js'></script>
+</head>
+<body bgcolor="#f0f5f4">
+<div class="container">
+    <div class="row">
+        <div id='map'></div>
+	</div>
+</div>
+
+<div id="panel">
+	<h1>Info Parkovisko</h1>
+	<p>Pridávanie bodu</p>
+	<label class="switch">
+		<input id="checkBox" type="checkbox">
+		<div class="slider round"></div>
+	</label>
+
+	<div>
+		<h2>Vyhľadávanie parkovísk</h2>			
+		<button class="btn btn-default" id="btnNearest" type="button" value="OK">Vyhľadať najbližšie</button>
+	</div>
+	<div>
+		<p style="margin-top: 40px;">Vyhľadávať vo vzdialenosti (m):</p>
+		<input class="form-control" id="radiusTB" type="text" name="radius" value=1>
+		<button class="btn btn-default" id="findAll" type="button" value="OK">Vyhľadať v zadanom okruhu</button>
+	</div>
+	<div>
+		<h2>Početnosť parkovísk v mestských častiach</h2>	
+		<button class="btn btn-default" id="showStvrte" type="button" value="OK">Zobraz početnosť</button>
+	</div>
+	
+		<button style="margin-top: 80px;" class="btn btn-default" id="Clear" type="button" value="OK">Vyčisti mapu</button>
+</div>
+
+<div>
+	<table id="colorTable">
+		<tr>
+			<td style="background: transparent; text-align:center;" id="zeroRow">Početnosť výskytu</th>
+		</tr>
+		<tr bgcolor="#FF0000">
+			<td style="width: 100px; text-align:center;" id="firstRow">Nieco</th>
+		</tr>
+		<tr bgcolor="#ff8000">
+			<td style="width: 100px; text-align:center;" id="secondRow">Sem</th>
+		</tr>
+		<tr bgcolor="#ffff00">
+			<td style="width: 100px; text-align:center;" id="thirdRow">Dam</th>
+		</tr>
+		<tr bgcolor="#bfff00">
+			<td style="width: 100px; text-align:center;" id="fourthRow">Lebo</th>
+		</tr>
+		<tr bgcolor="#80ff00">
+			<td style="width: 100px; text-align:center;" id="fifthRow">Chcem</th>
+		</tr>
+	</table>
+</div>		
+
+<script>
+		mapboxgl.accessToken = 'pk.eyJ1Ijoib25kcmVqa28xNyIsImEiOiJjaXZyNTYyZGcwMDI3Mm9rdzk1YzNqNGg5In0.of5dlCcj1IM04O7SfOJ9RA';
+		var map = new mapboxgl.Map({ 
+		container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9', 
+        center: [17.147531, 48.152939], 
+        zoom: 12 
+    });
+</script>		
+		
+</body>
+</html>
