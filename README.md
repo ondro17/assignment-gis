@@ -20,8 +20,8 @@ Build a map-based application, which lets the user see geo-based data on a map a
 
 Fill in (either in English, or in Slovak):
 
-**Application description**: `<fill in>`
+**Application description**: Aplikácia umožnuje vyhľadávanie parkovísk a prípojov mestskej hromadnej dopravy.
 
-**Data source**: `<fill in>`
+**Data source**: Open Street Maps
 
-**Technologies used**: `<fill in>`
+**Technologies used**: JavaScript, Php, Mapbox GL JS
